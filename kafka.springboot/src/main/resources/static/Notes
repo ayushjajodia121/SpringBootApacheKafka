@@ -1,0 +1,7 @@
+we can use these lines of code to convert some data from UTF-8 to normal string and then to object for fetching request body from an exception object
+
+String decodedString = new String(ex.request().body(), StandardCharsets.UTF_8);
+        ObjectMapper mapper = new ObjectMapper();
+        EmailRequestModel request = mapper.readValue(decodedString, EmailRequestModel.class);
+//        System.out.println("decoded string "+ request.toString());
+        request.getContent();
